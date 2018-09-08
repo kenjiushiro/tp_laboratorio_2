@@ -8,31 +8,40 @@ namespace Entidades
 {
     class Numero
     {
-        double numeroDecimal;
+        private double numero;
 
         public Numero()
         {
-            numeroDecimal = 0;
+            numero= 0;
         }
 
         public Numero(double numero)
         {
-            numeroDecimal = numero;
+            this.numero = numero;
         }
 
-        public Numero(string numero)
+        public Numero(string numeroA)
         {
-            double.TryParse(numero, out numeroDecimal);
+            SetNumero(numeroA);
         }
 
+        private string SetNumero(string numeroString)
+        {
+            double numeroValidado;
+            numeroValidado = validarNumero(numeroString);
+            if (numeroValidado != 0)
+                this.numero = numeroValidado;
+            return numeroString;
+        }
         public static string BinarioDecimal(string binario)
         {
             string numeroString = "";
             double numeroDecimal = 0;
             int cantidadDeCifras;
+            bool valido;
+            valido = double.TryParse(binario, out numeroDecimal);
 
-            numeroDecimal = validarNumero(binario);
-            if (numeroDecimal != 0)
+            if (valido)
             {
                 cantidadDeCifras = binario.Length;
                 numeroDecimal = 0;
@@ -76,6 +85,17 @@ namespace Entidades
                 }
             }
             return numeroEnBinario;
+        }
+
+        public static string DecimalBinario(string numeroB)
+        {
+            bool valido;
+            double numeroBase10;
+            string numeroConvertido = "Numero invalido";
+            valido = double.TryParse(numeroB, out numeroBase10);
+            if (valido)
+                numeroConvertido = DecimalBinario(numeroBase10);
+            return numeroConvertido;
         }
 
         private static double validarNumero(string numeroString)

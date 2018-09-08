@@ -10,9 +10,9 @@ namespace Entidades
     {
         static void Main(string[] args)
         {
-            string numeroEnBinario = "1111010";
+            string numeroEnBinario = "0";
             string binario;
-            double numero = 123;
+            string numero = "123";
             string numeroEnDecimal;
             numeroEnDecimal = Numero.BinarioDecimal(numeroEnBinario);
             binario = Numero.DecimalBinario(numero);
