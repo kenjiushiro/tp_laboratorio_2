@@ -10,14 +10,15 @@ namespace Entidades
     {
         static void Main(string[] args)
         {
-            string numeroEnBinario = "10101";
-            double numeroEnDecimal;
-
+            string numeroEnBinario = "1111010";
+            string binario;
+            double numero = 123;
+            string numeroEnDecimal;
             numeroEnDecimal = Numero.BinarioDecimal(numeroEnBinario);
-
-            
-            
-
+            binario = Numero.DecimalBinario(numero);
+            Console.WriteLine(Numero.BinarioDecimal(numeroEnBinario));
+            Console.WriteLine(binario);
+            Console.ReadKey();
         }
     }
 }

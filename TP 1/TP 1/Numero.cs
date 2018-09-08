@@ -27,27 +27,58 @@ namespace Entidades
 
         public static string BinarioDecimal(string binario)
         {
-            string numeroString;
+            string numeroString = "";
             double numeroDecimal = 0;
             int cantidadDeCifras;
 
             numeroDecimal = validarNumero(binario);
-
-            cantidadDeCifras = binario.Length;
-
-            for(int i=0;i<cantidadDeCifras;i++)
+            if (numeroDecimal != 0)
             {
-                if(binario.ElementAt(cantidadDeCifras) == 1)
+                cantidadDeCifras = binario.Length;
+                numeroDecimal = 0;
+                for (int i = 0; i < cantidadDeCifras; i++)
                 {
-                    numeroDecimal = numeroDecimal + Math.Pow(2, cantidadDeCifras-i);
+                    if (binario.ElementAt(i) == '1')
+                        numeroDecimal = numeroDecimal + Math.Pow(2, cantidadDeCifras - i - 1);
+                    else if(binario.ElementAt(i) != '0')
+                        return "Numero invalido";
                 }
+                numeroString = numeroDecimal + "";
             }
-            numeroString = numeroDecimal + "";
+            else
+                numeroString = "Numero invalido";
             return numeroString;
         }
         
+        public static string DecimalBinario(double numero)
+        {
+            double potencia;
+            int contador=0;
+            double sumador = 0;
+            string numeroEnBinario = "";
+            do
+            {
+                potencia = Math.Pow(2, contador);
+                contador++;
+            } while (numero > potencia);
 
-        private double validarNumero(string numeroString)
+            for(int i=contador-2;i>=0;i--)
+            {
+                potencia = Math.Pow(2, i);
+                if (sumador + potencia <= numero)
+                {
+                    sumador = sumador + potencia;
+                    numeroEnBinario = numeroEnBinario + "1";
+                }
+                else
+                {
+                    numeroEnBinario = numeroEnBinario + "0";
+                }
+            }
+            return numeroEnBinario;
+        }
+
+        private static double validarNumero(string numeroString)
         {
             double numeroDecimal;
             bool esValido = false;
