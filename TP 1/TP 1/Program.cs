@@ -10,12 +10,7 @@ namespace Entidades
     {
         static void Main(string[] args)
         {
-            Numero numeroUno = new Numero(56);
-            Numero numeroDos = new Numero(0);
-            double resultado;
-            resultado = Calculadora.Operar(numeroUno, numeroDos, "/");
-            Console.WriteLine(resultado);
-            Console.ReadKey();
+
         }
     }
 }

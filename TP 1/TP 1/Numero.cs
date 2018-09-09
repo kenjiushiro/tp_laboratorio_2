@@ -10,6 +10,7 @@ namespace Entidades
     {
         private double numero;
 
+
         public Numero()
         {
             numero= 0;
@@ -25,6 +26,7 @@ namespace Entidades
             SetNumero(numeroA);
         }
 
+
         private string SetNumero(string numeroString)
         {
             double numeroValidado;
@@ -34,6 +36,11 @@ namespace Entidades
             return numeroString;
         }
 
+        /// <summary>
+        /// Convierte un numero binario en decimal
+        /// </summary>
+        /// <param name="binario">Numero binario</param>
+        /// <returns>Numero convertido a base 10</returns>
         public static string BinarioDecimal(string binario)
         {
             string numeroString = "";
@@ -60,6 +67,11 @@ namespace Entidades
             return numeroString;
         }
         
+        /// <summary>
+        /// Convierte un numero de decimal a binario
+        /// </summary>
+        /// <param name="numero">Numero en tipo de dato double</param>
+        /// <returns>Numero convertido a binario</returns>
         public static string DecimalBinario(double numero)
         {
             double potencia;
@@ -88,6 +100,11 @@ namespace Entidades
             return numeroEnBinario;
         }
 
+        /// <summary>
+        /// Convierte un numero de decimal a binario
+        /// </summary>
+        /// <param name="numeroB">Numero en string</param>
+        /// <returns>Numero convertido a base 2</returns>
         public static string DecimalBinario(string numeroB)
         {
             bool valido;
@@ -99,6 +116,11 @@ namespace Entidades
             return numeroConvertido;
         }
 
+        /// <summary>
+        /// Verifica que el string pasado por parametro sea de  tipo numerico
+        /// </summary>
+        /// <param name="numeroString">String a validar</param>
+        /// <returns>Devuelve numero en formato double si es valido, 0 si no lo es</returns>
         private static double ValidarNumero(string numeroString)
         {
             double numeroDecimal;
