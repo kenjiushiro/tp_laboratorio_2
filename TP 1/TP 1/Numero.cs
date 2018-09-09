@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Numero
+    public class Numero
     {
         private double numero;
 
@@ -28,11 +28,12 @@ namespace Entidades
         private string SetNumero(string numeroString)
         {
             double numeroValidado;
-            numeroValidado = validarNumero(numeroString);
+            numeroValidado = ValidarNumero(numeroString);
             if (numeroValidado != 0)
                 this.numero = numeroValidado;
             return numeroString;
         }
+
         public static string BinarioDecimal(string binario)
         {
             string numeroString = "";
@@ -98,7 +99,7 @@ namespace Entidades
             return numeroConvertido;
         }
 
-        private static double validarNumero(string numeroString)
+        private static double ValidarNumero(string numeroString)
         {
             double numeroDecimal;
             bool esValido = false;
@@ -109,5 +110,27 @@ namespace Entidades
                 return 0;
         }
 
+        public static double operator +(Numero num1, Numero num2)
+        {
+           return num1.numero + num2.numero;
+        }
+
+        public static double operator -(Numero num1,Numero num2)
+        {
+            return num1.numero - num2.numero;
+        }
+
+        public static double operator *(Numero num1, Numero num2)
+        {
+            return num1.numero * num2.numero;
+        }
+
+        public static double operator /(Numero num1, Numero num2)
+        {
+            if (num2.numero != 0)
+                return num1.numero / num2.numero;
+            else
+                return double.MaxValue;
+        }
     }
 }
