@@ -82,7 +82,7 @@ namespace Entidades
             {
                 potencia = Math.Pow(2, contador);
                 contador++;
-            } while (numero > potencia);
+            } while (numero >= potencia);
 
             for(int i=contador-2;i>=0;i--)
             {
