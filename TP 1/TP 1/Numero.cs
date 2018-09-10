@@ -93,9 +93,8 @@ namespace Entidades
                     numeroEnBinario = numeroEnBinario + "1";
                 }
                 else
-                {
                     numeroEnBinario = numeroEnBinario + "0";
-                }
+                
             }
             return numeroEnBinario;
         }
