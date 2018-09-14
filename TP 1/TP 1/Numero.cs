@@ -23,17 +23,17 @@ namespace Entidades
 
         public Numero(string numeroA)
         {
-            SetNumero(numeroA);
+            this.SetNumero = numeroA;
         }
 
 
-        private string SetNumero(string numeroString)
-        {
-            double numeroValidado;
-            numeroValidado = ValidarNumero(numeroString);
-            if (numeroValidado != 0)
-                this.numero = numeroValidado;
-            return numeroString;
+        public string SetNumero
+        {   
+            set
+            {
+                if(ValidarNumero(value)!=0)
+                    this.numero = ValidarNumero(value);
+            }
         }
 
         /// <summary>
