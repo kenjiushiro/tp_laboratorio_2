@@ -54,6 +54,7 @@ namespace Entidades_2018
         {
             StringBuilder sb = new StringBuilder();
 
+            
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", c.productos.Count, c.espacioDisponible);
             sb.AppendLine("");
             foreach (Producto v in c.productos)
@@ -61,13 +62,16 @@ namespace Entidades_2018
                 switch (tipo)
                 {
                     case ETipo.Snacks:
-                        sb.AppendLine(v.Mostrar());
+                        if(v is Snacks)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Dulce:
-                        sb.AppendLine(v.Mostrar());
+                        if(v is Dulce)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Leche:
-                        sb.AppendLine(v.Mostrar());
+                        if(v is Leche)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     default:
                         sb.AppendLine(v.Mostrar());
@@ -90,11 +94,10 @@ namespace Entidades_2018
         {
             foreach (Producto v in c.productos)
             {
-                if (v == p)
+                if (v == p || c.productos.Count == c.espacioDisponible)
                     return c;
             }
-
-            c.productos.Add(p);
+            c.productos.Add(p);           
             return c;
         }
         /// <summary>
@@ -112,7 +115,7 @@ namespace Entidades_2018
                     break;
                 }
             }
-
+            c.productos.Remove(p);
             return c;
         }
         #endregion
