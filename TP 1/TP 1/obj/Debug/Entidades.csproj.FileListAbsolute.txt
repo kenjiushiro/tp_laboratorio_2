@@ -5,12 +5,9 @@ C:\Kenji\tp_laboratorio_2-master\TP 1\TP 1\obj\Debug\Entidades.csprojAssemblyRef
 C:\Kenji\tp_laboratorio_2-master\TP 1\TP 1\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Kenji\tp_laboratorio_2-master\TP 1\TP 1\obj\Debug\TP 1.exe
 C:\Kenji\tp_laboratorio_2-master\TP 1\TP 1\obj\Debug\TP 1.pdb
-D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.exe.config
-D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.exe
 D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.pdb
 D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\obj\Debug\Entidades.csprojAssemblyReference.cache
 D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\obj\Debug\TP 1.exe
 D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\obj\Debug\TP 1.pdb
 C:\Kenji\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.exe.config
 C:\Kenji\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.exe
@@ -19,3 +16,6 @@ C:\Kenji\tp_laboratorio_2\TP 1\TP 1\obj\Debug\Entidades.csprojAssemblyReference.
 C:\Kenji\tp_laboratorio_2\TP 1\TP 1\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Kenji\tp_laboratorio_2\TP 1\TP 1\obj\Debug\TP 1.exe
 C:\Kenji\tp_laboratorio_2\TP 1\TP 1\obj\Debug\TP 1.pdb
+D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.dll.config
+D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\bin\Debug\TP 1.dll
+D:\utn\Segundo cuatri\tp_laboratorio_2\tp_laboratorio_2\TP 1\TP 1\obj\Debug\TP 1.dll

@@ -10,16 +10,15 @@ namespace Entidades
     {
         private double numero;
 
-
-        public Numero()
-        {
-            numero= 0;
-        }
-
         public Numero(double numero)
         {
             this.numero = numero;
         }
+
+        public Numero():this(0)
+        {
+        }
+
 
         public Numero(string numeroA)
         {

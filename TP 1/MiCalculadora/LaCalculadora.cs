@@ -17,13 +17,17 @@ namespace MiCalculadora
         {
             InitializeComponent();
         }
-        
+
+        Numero num1;
+        Numero num2;
+        string operador;
+        double resultado;
+
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            Numero num1 = new Numero(txtNumero1.Text);
-            Numero num2 = new Numero(txtNumero2.Text);
-            string operador = cmbOperador.Text;
-            double resultado;
+            num1.SetNumero = txtNumero1.Text;
+            num2.SetNumero = txtNumero2.Text;
+            operador = cmbOperador.Text;
             resultado = Calculadora.Operar(num1, num2, operador);
             lblResultado.Text = resultado + "";
         }
@@ -62,7 +66,8 @@ namespace MiCalculadora
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            num1 = new Numero(txtNumero1.Text);
+            num2 = new Numero(txtNumero2.Text);
         }
     }
 }

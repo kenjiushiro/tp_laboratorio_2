@@ -34,7 +34,7 @@ namespace Entidades
         /// <summary>
         /// Retorna una operacion entre dos numeros
         /// </summary>
-        /// <param name="num1">Primer numero de la operacion</param>
+        /// <param name="num1">Primer numero de la operacion</param>                                               
         /// <param name="num2">Segudo numero de la operacion</param>
         /// <param name="operador">Operacion a realizar</param>
         /// <returns>Resultado de la operacion</returns>
@@ -48,14 +48,14 @@ namespace Entidades
             {
                 case "-":
                     resultado = num1 - num2;
-                    break;
-                case "*":
+                    break;          
+                case "*":           
                     resultado = num1 * num2;
-                    break;
-                case "/":
+                    break;          
+                case "/":           
                     resultado = num1 / num2;
-                    break;
-                default:
+                    break;          
+                default:            
                     resultado = num1 + num2;
                     break;
             }
