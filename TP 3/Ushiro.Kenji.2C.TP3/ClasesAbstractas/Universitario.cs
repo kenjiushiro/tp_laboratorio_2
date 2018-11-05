@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClasesAbstractas
 {
-    public abstract class Universitario
+    public abstract class Universitario : Persona
     {
+
     }
 }

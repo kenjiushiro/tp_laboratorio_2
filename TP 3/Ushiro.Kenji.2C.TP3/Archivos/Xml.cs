@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClasesInstanciables
+namespace Archivos
 {
-    public class Universidad
+    class Xml<T> : IArchivo<T>
     {
-
     }
 }
