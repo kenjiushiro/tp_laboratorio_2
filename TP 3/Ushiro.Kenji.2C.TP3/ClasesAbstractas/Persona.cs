@@ -21,11 +21,11 @@ namespace ClasesAbstractas
         {
             set
             {
-
+                this.apellido = value;
             }
             get
             {
-
+                return this.apellido;
             }
         }
 
@@ -33,11 +33,11 @@ namespace ClasesAbstractas
         {
             get
             {
-
+                return this.dni;
             }
             set
             {
-
+                this.dni = ValidarDni(this.nacionalidad, value);
             }
         }
 
@@ -45,11 +45,11 @@ namespace ClasesAbstractas
         {
             set
             {
-
+                this.nacionalidad = value;
             }
             get
             {
-
+                return this.nacionalidad;
             }
         }
 
@@ -57,11 +57,11 @@ namespace ClasesAbstractas
         {
             set
             {
-
+                this.nombre = value;
             }
             get
             {
-
+                return this.nombre;
             }
         }
 
@@ -69,7 +69,7 @@ namespace ClasesAbstractas
         {
             set
             {
-
+                this.dni = ValidarDni(this.nacionalidad,value);
             }
         }
         #endregion
@@ -82,15 +82,17 @@ namespace ClasesAbstractas
 
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
         {
-            
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.nacionalidad = nacionalidad;
         }
 
-        public Persona(string nombre,string apellido,int dni,ENacionalidad nacionalidad)
+        public Persona(string nombre,string apellido,int dni,ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
-
+            this.DNI = dni;
         }
 
-        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
 
         }
