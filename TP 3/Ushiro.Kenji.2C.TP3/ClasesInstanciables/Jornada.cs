@@ -13,7 +13,6 @@ namespace ClasesInstanciables
         private Profesor instructor;
 
         #region Propiedades
-
         public List<Alumno> Alumnos
         {
             get
@@ -25,12 +24,14 @@ namespace ClasesInstanciables
                 this.alumnos = value;
             }
         }
+
         public Universidad.EClases Clase
         {
             get
             {
                 return this.clase;
             }
+
             set
             {
                 this.clase = value;
@@ -51,42 +52,45 @@ namespace ClasesInstanciables
         #endregion
 
         #region Metodos
-        public bool Guardar(Jornada jornada)
-        {
-
-        }
-
         private Jornada()
         {
             this.alumnos = new List<Alumno>();
         }
 
-        public Jornada(Universidad.EClases clase, Profesor instructor) : this()
+        public Jornada(Universidad.EClases clase, Profesor instructor)
         {
             this.clase = clase;
             this.instructor = instructor;
         }
 
-        public string Leer()
-        {
 
+
+        public static bool Guardar(Jornada jornada)
+        {
+            return true;
         }
 
-        public static bool operator ==(Jornada j, Alumno a)
+        public string Leer()
         {
-            if (a == j.clase)
-                return true;
+            return "asd";
+        }
+
+        public static bool operator ==(Jornada j ,Alumno a)
+        {
+            foreach (Alumno al in j.alumnos)
+                if (al == a)
+                    return true;
             return false;
         }
 
-        public static bool operator !=(Jornada j, Alumno a)
+        public static bool operator !=(Jornada j,Alumno a)
         {
             return !(j == a);
         }
 
-        public static Jornada operator +(Jornada j,Alumno a)
+        public static Jornada  operator +(Jornada j,Alumno a)
         {
-            if (j == a)
+            if (j != a)
                 j.alumnos.Add(a);
             return j;
         }
@@ -94,12 +98,16 @@ namespace ClasesInstanciables
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();
-            datos.AppendLine("CLASE DE " + this.clase.ToString() + " POR NOMBRE COMPLETO: " + this.instructor.ToString());
-            datos.AppendLine(this.alumnos.ToString());
-            datos.AppendLine("<------------------------------------------------>");
-            return datos.ToString();
-        }
-        #endregion
+            datos.AppendLine("CLASE DE " + this.clase + " POR NOMBRE COMPLETO: " + this.instructor);
+            datos.AppendLine(this.instructor.ToString());
+            foreach(Alumno al in this.alumnos)
+                datos.AppendLine(al.ToString());
 
+            return datos.ToString();           
+        }
+
+
+
+        #endregion  
     }
 }

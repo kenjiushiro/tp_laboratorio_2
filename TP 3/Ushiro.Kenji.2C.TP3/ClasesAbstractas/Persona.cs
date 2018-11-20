@@ -5,17 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Excepciones;
 
-namespace ClasesAbstractas
+namespace EntidadesAbstractas
 {
     public abstract class Persona
     {
-        #region Campos
         private string apellido;
         private int dni;
         private ENacionalidad nacionalidad;
         private string nombre;
-        #endregion
-
+                                                        
         #region Propiedades
         public string Apellido
         {
@@ -37,7 +35,7 @@ namespace ClasesAbstractas
             }
             set
             {
-                this.dni = ValidarDni(this.nacionalidad, value);
+                this.dni = value;
             }
         }
 
@@ -69,15 +67,14 @@ namespace ClasesAbstractas
         {
             set
             {
-                this.dni = ValidarDni(this.nacionalidad,value);
+                this.dni = int.Parse(value);
             }
         }
-        #endregion
-
-        #region Metodos
+        #endregion                                     
+                                                        
+        #region Metodos                                 
         public Persona()
         {
-
         }
 
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
@@ -89,12 +86,12 @@ namespace ClasesAbstractas
 
         public Persona(string nombre,string apellido,int dni,ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
-            this.DNI = dni;
+            this.dni = dni;
         }
 
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
-
+            this.StringToDNI = dni;
         }
 
         public override string ToString()
@@ -128,7 +125,7 @@ namespace ClasesAbstractas
                 return aux;
         }
 
-        private string ValidarNombre(string dato)
+        private string ValidarNombreApellido(string dato)
         {
             string retorno=dato;
 
@@ -136,12 +133,11 @@ namespace ClasesAbstractas
             {
                 if ((dato.ToCharArray()[i] < 'a' || dato.ToCharArray()[i] > 'z') && (dato.ToCharArray()[i] < 'A' || dato.ToCharArray()[i] > 'Z') && dato.ToCharArray()[i] != ' ')
                 {
-                    retorno = "asdasd";
+                    retorno = "";
                     break;
                 }
             }
             return retorno;
-
         }
         #endregion
 

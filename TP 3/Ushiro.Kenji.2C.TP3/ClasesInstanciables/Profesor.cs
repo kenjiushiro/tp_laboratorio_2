@@ -1,84 +1,67 @@
-﻿using ClasesAbstractas;
+﻿using EntidadesAbstractas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace ClasesInstanciables
 {
     public sealed class Profesor : Universitario
     {
-        Queue<Universidad.EClases> clasesDelDia;
-        static Random random;
+        private Queue<Universidad.EClases> clasesDelDia;
+        private Random random;
 
         #region Metodos
-        private void _randomClases()
+        private Profesor()
         {
-            int numRandom1;
-            int numRandom2;
-            numRandom1 = random.Next(0, 3);
-            Thread.Sleep(100);
-            numRandom2 = random.Next(0, 3);
-            this.clasesDelDia.Enqueue((Universidad.EClases)numRandom1);
-            this.clasesDelDia.Enqueue((Universidad.EClases)numRandom2);
+            clasesDelDia = new Queue<Universidad.EClases>();
         }
-    
+
+        public Profesor(int id, string nombre,string apellido,string dni,ENacionalidad nacionalidad): base(id,nombre,apellido,dni,nacionalidad)
+        {
+
+        }
+
+        private void _randomClase()
+        {
+
+        }
 
         protected override string MostrarDatos()
         {
-            StringBuilder datos = new StringBuilder();
-            datos.Append(base.ToString());
+            StringBuilder datos = new StringBuilder(base.ToString());
+            datos.AppendLine("CLASES DEL DIA:");
+            foreach(Universidad.EClases clase in this.clasesDelDia)
+            {
+                datos.AppendLine(clase.ToString());
+            }
+            datos.AppendLine(this.ParticiparEnClase());
+
             return datos.ToString();
         }
 
-        public static bool operator ==(Profesor i, Universidad.EClases clase)
+        public static bool operator ==(Profesor i,Universidad.EClases clase)
         {
-            foreach(Universidad.EClases c in i.clasesDelDia)
-                if(c==clase)
-                    return true;
+            if(i.clasesDelDia.Count > 0)
+                foreach (Universidad.EClases cl in i.clasesDelDia)
+                    if (cl == clase)
+                        return true;
             return false;
         }
 
-        public static bool operator !=(Profesor i, Universidad.EClases clase)
+        public static bool operator !=(Profesor i,Universidad.EClases clase)
         {
             return !(i == clase);
         }
-
+        
         protected override string ParticiparEnClase()
         {
-            StringBuilder datos = new StringBuilder();
-            datos.Append("CLASES DEL DIA ");
-            foreach(Universidad.EClases clase in this.clasesDelDia)
-                datos.Append(clase.ToString());
-            return datos.ToString();
+            StringBuilder clasesQueDa = new StringBuilder("CLASES DEL DIA ");
+            foreach (Universidad.EClases cl in this.clasesDelDia)
+                clasesQueDa.Append(cl.ToString() + ", ");
+            return clasesQueDa.ToString();
         }
-
-        static Profesor()
-        {
-            random = new Random();
-        }
-
-        private Profesor():base()
-        {
-            _randomClases();
-            
-        }
-
-        public Profesor(int id,string nombre, string apellido,string dni, ENacionalidad nacionalidad):this()
-        {
-
-
-        }
-
-        public override string ToString()
-        {
-            StringBuilder datos = new StringBuilder();
-            datos.Append(base.ToString());
-            datos.AppendLine(this.ParticiparEnClase());
-            return datos.ToString();
-        } 
         #endregion
     }
 }
