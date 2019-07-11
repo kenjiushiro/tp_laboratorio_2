@@ -10,7 +10,6 @@ namespace Entidades
     {
         public TrackingIdRepetidoException(string message) : base(message)
         {
-
         }
 
         public TrackingIdRepetidoException(string message, Exception innerException) : base(message, innerException)

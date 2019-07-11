@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    static class GuardaString
+    public static class GuardaString
     {
         public static bool Guardar(this string texto,string archivo)
         {

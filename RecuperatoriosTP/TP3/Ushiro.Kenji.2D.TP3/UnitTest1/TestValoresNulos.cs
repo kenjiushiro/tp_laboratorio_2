@@ -10,7 +10,7 @@ namespace UnitTest1
         [TestMethod]
         public void TestMethod1()
         {
-            Universidad uni = new Universidad();
+            Universidad uni= new Universidad();
             Assert.IsNotNull(uni.Alumnos);
         }
     }

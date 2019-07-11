@@ -83,7 +83,7 @@ namespace Main
             Console.WriteLine(gim.ToString());
 
             Console.ReadKey();
-            //Console.Clear();
+            Console.Clear();
             try
             {
                 Universidad.Guardar(gim);

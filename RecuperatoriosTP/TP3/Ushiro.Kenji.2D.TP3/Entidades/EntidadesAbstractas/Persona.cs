@@ -34,12 +34,12 @@ namespace EntidadesAbstractas
 
         public Persona(string nombre,string apellido,int dni,ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
-            this.DNI = ValidarDni(nacionalidad,dni);
+            this.DNI = dni;
         }
-
+        
         public Persona(string nombre,string apellido,string dni,ENacionalidad nacionalidad):this(nombre,apellido,nacionalidad)
         {
-            this.StringToDNI = ValidarDni(nacionalidad,dni) + "";
+            this.StringToDNI = dni + "";
         }
 
         public override string ToString()
@@ -58,6 +58,11 @@ namespace EntidadesAbstractas
                 if (dato < 1 || dato > 89999999)
                     throw new NacionalidadInvalidaException("La nacionalidad no es valida");
             }
+            else if(nacionalidad == ENacionalidad.Extranjero)
+            {
+                if(dato< 90000000 || dato> 99999999)
+                    throw new NacionalidadInvalidaException("La nacionalidad no es valida");
+            }
             return dato;
         }
 
@@ -66,7 +71,7 @@ namespace EntidadesAbstractas
             int dni;
             bool parseado = int.TryParse(dato, out dni);
             if (!parseado)
-                throw new Entidades.DniInvalidoException("El dni no es valido");
+                throw new Entidades.DniInvalidoException("El DNI no es valido");
 
             dni = ValidarDni(nacionalidad, dni);
 
@@ -106,7 +111,7 @@ namespace EntidadesAbstractas
             }
             set
             {
-                this.dni = value;
+                this.dni =ValidarDni(this.nacionalidad,value);
             }
         }
 
@@ -138,7 +143,7 @@ namespace EntidadesAbstractas
         {
             set
             {
-                this.dni = int.Parse(value);
+                this.dni = ValidarDni( this.nacionalidad,value);
             }
         }
         #endregion

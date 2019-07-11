@@ -11,10 +11,18 @@ namespace Entidades
 
     public class Paquete : IMostrar<Paquete>
     {
+        #region Campos
+
         private string direccionEntrega;
         private EEstado estado;
         private string trackingID;
         public event DelegadoEstado InformaEstado;
+        public event DelegadoEstado ErrorBaseDeDatos;
+
+
+        #endregion
+
+        #region Propiedades
 
 
         public string DireccionEntrega
@@ -53,16 +61,35 @@ namespace Entidades
             }
         }
 
+
+        #endregion
+
+        #region Metodos
+
         public void MockCicloDeVida()
         {
+            do
+            {
+                InformaEstado.Invoke(this, null);
+                System.Threading.Thread.Sleep(10000);
+
+                this.Estado++;
+            } while (this.Estado != EEstado.Entregado);
+
+            try
+            {
+                PaqueteDAO.Insertar(this);
+            }
+            catch (Exception e)
+            {
+                Dictionary<Paquete, Exception> paqueteException = new Dictionary<Paquete, Exception>()
+                {
+                    {this, e}
+                };
+                ErrorBaseDeDatos.Invoke(paqueteException, null);
+            }
+
             InformaEstado.Invoke(this, null);
-            Thread.Sleep(4000);
-            this.estado = EEstado.EnViaje;
-            InformaEstado.Invoke(this, null);
-            Thread.Sleep(4000);
-            this.estado = EEstado.Entregado;
-            InformaEstado.Invoke(this, null);
-            PaqueteDAO.Insertar(this);
         }
 
         public string MostrarDatos(IMostrar<Paquete> elemento)
@@ -96,6 +123,8 @@ namespace Entidades
         {
             return this.MostrarDatos(this);
         }
+
+        #endregion
 
         public enum EEstado
         {

@@ -118,9 +118,8 @@ namespace EntidadesInstanciables
             try
             {
                 if(j!=a)
-                {
                     j.alumnos.Add(a);
-                }
+                
             }
             catch(AlumnoRepetidoException e)
             {

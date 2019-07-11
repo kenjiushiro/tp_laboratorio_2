@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.grpBoxEstadoPaquetes = new System.Windows.Forms.GroupBox();
-            this.grpBoxPaquete = new System.Windows.Forms.GroupBox();
-            this.lblIngresado = new System.Windows.Forms.Label();
-            this.listBoxIngresado = new System.Windows.Forms.ListBox();
-            this.listBoxEnViaje = new System.Windows.Forms.ListBox();
-            this.lblEnViaje = new System.Windows.Forms.Label();
             this.listBoxEntregado = new System.Windows.Forms.ListBox();
             this.lblEntregado = new System.Windows.Forms.Label();
-            this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblTrackingID = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.listBoxEnViaje = new System.Windows.Forms.ListBox();
+            this.lblEnViaje = new System.Windows.Forms.Label();
+            this.listBoxIngresado = new System.Windows.Forms.ListBox();
+            this.lblIngresado = new System.Windows.Forms.Label();
+            this.grpBoxPaquete = new System.Windows.Forms.GroupBox();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblTrackingID = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
             this.rtbMostrar = new System.Windows.Forms.RichTextBox();
             this.grpBoxEstadoPaquetes.SuspendLayout();
             this.grpBoxPaquete.SuspendLayout();
@@ -62,37 +62,22 @@
             this.grpBoxEstadoPaquetes.TabStop = false;
             this.grpBoxEstadoPaquetes.Text = "Estado Paquetes";
             // 
-            // grpBoxPaquete
+            // listBoxEntregado
             // 
-            this.grpBoxPaquete.Controls.Add(this.btnMostrarTodos);
-            this.grpBoxPaquete.Controls.Add(this.btnAgregar);
-            this.grpBoxPaquete.Controls.Add(this.lblDireccion);
-            this.grpBoxPaquete.Controls.Add(this.lblTrackingID);
-            this.grpBoxPaquete.Controls.Add(this.txtDireccion);
-            this.grpBoxPaquete.Controls.Add(this.mtxtTrackingID);
-            this.grpBoxPaquete.Location = new System.Drawing.Point(452, 291);
-            this.grpBoxPaquete.Name = "grpBoxPaquete";
-            this.grpBoxPaquete.Size = new System.Drawing.Size(294, 140);
-            this.grpBoxPaquete.TabIndex = 1;
-            this.grpBoxPaquete.TabStop = false;
-            this.grpBoxPaquete.Text = "Paquete";
+            this.listBoxEntregado.FormattingEnabled = true;
+            this.listBoxEntregado.Location = new System.Drawing.Point(515, 53);
+            this.listBoxEntregado.Name = "listBoxEntregado";
+            this.listBoxEntregado.Size = new System.Drawing.Size(212, 199);
+            this.listBoxEntregado.TabIndex = 5;
             // 
-            // lblIngresado
+            // lblEntregado
             // 
-            this.lblIngresado.AutoSize = true;
-            this.lblIngresado.Location = new System.Drawing.Point(7, 37);
-            this.lblIngresado.Name = "lblIngresado";
-            this.lblIngresado.Size = new System.Drawing.Size(54, 13);
-            this.lblIngresado.TabIndex = 0;
-            this.lblIngresado.Text = "Ingresado";
-            // 
-            // listBoxIngresado
-            // 
-            this.listBoxIngresado.FormattingEnabled = true;
-            this.listBoxIngresado.Location = new System.Drawing.Point(10, 53);
-            this.listBoxIngresado.Name = "listBoxIngresado";
-            this.listBoxIngresado.Size = new System.Drawing.Size(212, 199);
-            this.listBoxIngresado.TabIndex = 1;
+            this.lblEntregado.AutoSize = true;
+            this.lblEntregado.Location = new System.Drawing.Point(512, 37);
+            this.lblEntregado.Name = "lblEntregado";
+            this.lblEntregado.Size = new System.Drawing.Size(56, 13);
+            this.lblEntregado.TabIndex = 4;
+            this.lblEntregado.Text = "Entregado";
             // 
             // listBoxEnViaje
             // 
@@ -111,54 +96,47 @@
             this.lblEnViaje.TabIndex = 2;
             this.lblEnViaje.Text = "En viaje";
             // 
-            // listBoxEntregado
+            // listBoxIngresado
             // 
-            this.listBoxEntregado.FormattingEnabled = true;
-            this.listBoxEntregado.Location = new System.Drawing.Point(515, 53);
-            this.listBoxEntregado.Name = "listBoxEntregado";
-            this.listBoxEntregado.Size = new System.Drawing.Size(212, 199);
-            this.listBoxEntregado.TabIndex = 5;
+            this.listBoxIngresado.FormattingEnabled = true;
+            this.listBoxIngresado.Location = new System.Drawing.Point(10, 53);
+            this.listBoxIngresado.Name = "listBoxIngresado";
+            this.listBoxIngresado.Size = new System.Drawing.Size(212, 199);
+            this.listBoxIngresado.TabIndex = 1;
             // 
-            // lblEntregado
+            // lblIngresado
             // 
-            this.lblEntregado.AutoSize = true;
-            this.lblEntregado.Location = new System.Drawing.Point(512, 37);
-            this.lblEntregado.Name = "lblEntregado";
-            this.lblEntregado.Size = new System.Drawing.Size(56, 13);
-            this.lblEntregado.TabIndex = 4;
-            this.lblEntregado.Text = "Entregado";
+            this.lblIngresado.AutoSize = true;
+            this.lblIngresado.Location = new System.Drawing.Point(7, 37);
+            this.lblIngresado.Name = "lblIngresado";
+            this.lblIngresado.Size = new System.Drawing.Size(54, 13);
+            this.lblIngresado.TabIndex = 0;
+            this.lblIngresado.Text = "Ingresado";
             // 
-            // mtxtTrackingID
+            // grpBoxPaquete
             // 
-            this.mtxtTrackingID.Location = new System.Drawing.Point(18, 41);
-            this.mtxtTrackingID.Name = "mtxtTrackingID";
-            this.mtxtTrackingID.Size = new System.Drawing.Size(137, 20);
-            this.mtxtTrackingID.TabIndex = 0;
+            this.grpBoxPaquete.Controls.Add(this.btnMostrarTodos);
+            this.grpBoxPaquete.Controls.Add(this.btnAgregar);
+            this.grpBoxPaquete.Controls.Add(this.lblDireccion);
+            this.grpBoxPaquete.Controls.Add(this.lblTrackingID);
+            this.grpBoxPaquete.Controls.Add(this.txtDireccion);
+            this.grpBoxPaquete.Controls.Add(this.mtxtTrackingID);
+            this.grpBoxPaquete.Location = new System.Drawing.Point(452, 291);
+            this.grpBoxPaquete.Name = "grpBoxPaquete";
+            this.grpBoxPaquete.Size = new System.Drawing.Size(294, 140);
+            this.grpBoxPaquete.TabIndex = 1;
+            this.grpBoxPaquete.TabStop = false;
+            this.grpBoxPaquete.Text = "Paquete";
             // 
-            // txtDireccion
+            // btnMostrarTodos
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(18, 105);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(137, 20);
-            this.txtDireccion.TabIndex = 1;
-            // 
-            // lblTrackingID
-            // 
-            this.lblTrackingID.AutoSize = true;
-            this.lblTrackingID.Location = new System.Drawing.Point(15, 25);
-            this.lblTrackingID.Name = "lblTrackingID";
-            this.lblTrackingID.Size = new System.Drawing.Size(63, 13);
-            this.lblTrackingID.TabIndex = 6;
-            this.lblTrackingID.Text = "Tracking ID";
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(15, 89);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 7;
-            this.lblDireccion.Text = "Direccion";
+            this.btnMostrarTodos.Location = new System.Drawing.Point(180, 89);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(97, 35);
+            this.btnMostrarTodos.TabIndex = 9;
+            this.btnMostrarTodos.Text = "Mostrar Todos";
+            this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // btnAgregar
             // 
@@ -170,15 +148,38 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnMostrarTodos
+            // lblDireccion
             // 
-            this.btnMostrarTodos.Location = new System.Drawing.Point(180, 89);
-            this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(97, 35);
-            this.btnMostrarTodos.TabIndex = 9;
-            this.btnMostrarTodos.Text = "Mostrar Todos";
-            this.btnMostrarTodos.UseVisualStyleBackColor = true;
-            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(15, 89);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 7;
+            this.lblDireccion.Text = "Direccion";
+            // 
+            // lblTrackingID
+            // 
+            this.lblTrackingID.AutoSize = true;
+            this.lblTrackingID.Location = new System.Drawing.Point(15, 25);
+            this.lblTrackingID.Name = "lblTrackingID";
+            this.lblTrackingID.Size = new System.Drawing.Size(63, 13);
+            this.lblTrackingID.TabIndex = 6;
+            this.lblTrackingID.Text = "Tracking ID";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(18, 105);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(137, 20);
+            this.txtDireccion.TabIndex = 1;
+            // 
+            // mtxtTrackingID
+            // 
+            this.mtxtTrackingID.Location = new System.Drawing.Point(18, 41);
+            this.mtxtTrackingID.Mask = "000-000-0000";
+            this.mtxtTrackingID.Name = "mtxtTrackingID";
+            this.mtxtTrackingID.Size = new System.Drawing.Size(137, 20);
+            this.mtxtTrackingID.TabIndex = 0;
             // 
             // rtbMostrar
             // 

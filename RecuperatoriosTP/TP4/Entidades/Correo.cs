@@ -10,8 +10,13 @@ namespace Entidades
 {
     public class Correo : IMostrar<List<Paquete>>
     {
+        #region Campos
+
         private List<Thread> mockPaquetes;
         private List<Paquete> paquetes;
+        #endregion
+
+        #region Propiedades
 
         public List<Paquete> Paquetes
         {
@@ -26,6 +31,8 @@ namespace Entidades
             }
         }
 
+        #endregion
+
         public Correo()
         {
             mockPaquetes = new List<Thread>();
@@ -36,8 +43,16 @@ namespace Entidades
         {
             foreach (Thread hilo in mockPaquetes)
                 if (hilo.IsAlive)
-                    hilo.Abort();
+                    try
+                    {
+                        hilo.Abort();
+                    }
+                    catch(ThreadAbortException e)
+                    {
+
+                    }
         }
+
 
         public string MostrarDatos(IMostrar<List<Paquete>> paquetes)
         {
@@ -45,7 +60,7 @@ namespace Entidades
             List<Paquete> lista = ((Correo)paquetes).paquetes;
 
             foreach (Paquete p in this.paquetes)
-                datos.AppendFormat("{0} ({1})",p.ToString(), p.Estado.ToString());
+                datos.AppendFormat("{0} para {1} ({2})", p.TrackingID, p.DireccionEntrega, p.Estado.ToString());
 
             return datos.ToString();
         }

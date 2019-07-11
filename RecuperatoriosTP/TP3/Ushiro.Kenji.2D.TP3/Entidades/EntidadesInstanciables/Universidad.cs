@@ -144,7 +144,7 @@ namespace EntidadesInstanciables
         {
             foreach (Alumno al in g.alumnos)
                 if (al == a)
-                    return true;
+                    throw new AlumnoRepetidoException("El alumno ya esta inscripto");
             return false;
         }
 
