@@ -71,7 +71,7 @@ namespace Entidades
             do
             {
                 InformaEstado.Invoke(this, null);
-                System.Threading.Thread.Sleep(10000);
+                System.Threading.Thread.Sleep(4000);
 
                 this.Estado++;
             } while (this.Estado != EEstado.Entregado);
