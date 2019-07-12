@@ -17,9 +17,7 @@ namespace TestsUnitarios
             Paquete paquete2= new Paquete("qwerty", "1231231234");
 
             correo += paquete1;
-            correo += paquete2;
-
-            
+            correo += paquete2;  
         }
     }
 }
