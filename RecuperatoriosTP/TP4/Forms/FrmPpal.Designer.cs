@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpBoxEstadoPaquetes = new System.Windows.Forms.GroupBox();
             this.listBoxEntregado = new System.Windows.Forms.ListBox();
             this.lblEntregado = new System.Windows.Forms.Label();
@@ -43,8 +44,11 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
             this.rtbMostrar = new System.Windows.Forms.RichTextBox();
+            this.MostrarToolstripMenuItem = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mostrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.grpBoxEstadoPaquetes.SuspendLayout();
             this.grpBoxPaquete.SuspendLayout();
+            this.MostrarToolstripMenuItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoxEstadoPaquetes
@@ -64,6 +68,7 @@
             // 
             // listBoxEntregado
             // 
+            this.listBoxEntregado.ContextMenuStrip = this.MostrarToolstripMenuItem;
             this.listBoxEntregado.FormattingEnabled = true;
             this.listBoxEntregado.Location = new System.Drawing.Point(515, 53);
             this.listBoxEntregado.Name = "listBoxEntregado";
@@ -189,6 +194,20 @@
             this.rtbMostrar.TabIndex = 2;
             this.rtbMostrar.Text = "";
             // 
+            // MostrarToolstripMenuItem
+            // 
+            this.MostrarToolstripMenuItem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarToolStripMenuItem1});
+            this.MostrarToolstripMenuItem.Name = "MostrarToolstripMenuItem";
+            this.MostrarToolstripMenuItem.Size = new System.Drawing.Size(125, 26);
+            // 
+            // mostrarToolStripMenuItem1
+            // 
+            this.mostrarToolStripMenuItem1.Name = "mostrarToolStripMenuItem1";
+            this.mostrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem1.Text = "Mostrar...";
+            this.mostrarToolStripMenuItem1.Click += new System.EventHandler(this.mostrarToolStripMenuItem1_Click);
+            // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,11 +223,13 @@
             this.grpBoxEstadoPaquetes.PerformLayout();
             this.grpBoxPaquete.ResumeLayout(false);
             this.grpBoxPaquete.PerformLayout();
+            this.MostrarToolstripMenuItem.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
 
         private System.Windows.Forms.GroupBox grpBoxEstadoPaquetes;
         private System.Windows.Forms.ListBox listBoxEntregado;
@@ -225,6 +246,8 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.MaskedTextBox mtxtTrackingID;
         private System.Windows.Forms.RichTextBox rtbMostrar;
+        private System.Windows.Forms.ContextMenuStrip MostrarToolstripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem1;
     }
 }
 

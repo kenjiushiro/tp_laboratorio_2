@@ -127,5 +127,18 @@ namespace Forms
                     this.listBoxEntregado.Items.Add(p);
             }
         }
+
+        private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Paquete p = (Paquete)this.listBoxEntregado.SelectedItem;
+                this.rtbMostrar.Text = String.Format("{0}", p.ToString());
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
